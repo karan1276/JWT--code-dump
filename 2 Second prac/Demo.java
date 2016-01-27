@@ -4,22 +4,72 @@ class Demo{
 	public static void main(String[] args){
 
 		Scanner s = new Scanner(System.in);
-		System.out.println("Enter two Numbers");
-		int a = s.nextInt();
-		int b = s.nextInt();
-		CustomMath m = new CustomMath();
-		System.out.print("Sum is : ");
-		System.out.println(m.add(a,b));
-		System.out.print("Sub is : ");
-		System.out.println(m.sub(a,b));
-		System.out.print("Multiplication is : ");
-		System.out.println(m.multi(a,b));
-		System.out.print("Division is : ");
-		System.out.println((double)m.div(a,b));
-		System.out.print("Square root is : ");
-		System.out.println((double)m.Csqrt(a));
-		System.out.println("Mean Module");
-		m.variance();
+		CustomMath cm = new CustomMath();
+		boolean flag = true;
+		int ch=0,a,b;
+			
+		while(flag){
+			System.out.println("Enter you Choise");
+			System.out.println("0. Exit");
+			System.out.println("1. Add");
+			System.out.println("2. Subtract");
+			System.out.println("3. Multiply");
+			System.out.println("4. Division");
+			System.out.println("5. Square root");
+			System.out.println("6. Mean");
+			System.out.println("7. Variance");
+			ch = s.nextInt();
+
+			//System.out.println("Enter two Numbers");
+			//int a = s.nextInt();
+			//int b = s.nextInt();
+
+			switch(ch){
+				case 0:
+					flag=false;
+				break;
+				case 1:
+					System.out.println("Enter two Numbers");
+					 a = s.nextInt();
+					b = s.nextInt();
+					System.out.println("Answer is: "+cm.add(a,b));
+				break;
+				case 2:
+					System.out.println("Enter two Numbers");
+					a = s.nextInt();
+					b = s.nextInt();
+					System.out.println("Answer is: "+cm.sub(a,b));
+				break;
+				case 3:
+					System.out.println("Enter two Numbers");
+					a = s.nextInt();
+					b = s.nextInt();
+					System.out.println("Answer is: "+cm.multi(a,b));
+				break;
+				case 4:
+					System.out.println("Enter two Numbers");
+					a = s.nextInt();
+					b = s.nextInt();
+					System.out.println("Answer is: "+cm.div(a,b));
+				break;
+				case 5:
+					System.out.println("Enter one Numbers");
+					a = s.nextInt();
+					System.out.println("Answer is: "+cm.Csqrt(a));
+				break;
+				case 6:
+					cm.mean();
+				break;
+				case 7:
+					cm.variance();
+				break;
+				default:
+					flag=false;
+				break;
+			}
+		}
+
+	
 	}
 }
 class CustomMath{

@@ -19,10 +19,12 @@ class Demo{
 		System.out.print("Square root is : ");
 		System.out.println((double)m.Csqrt(a));
 		System.out.println("Mean Module");
-		m.mean();
+		m.variance();
 	}
 }
 class CustomMath{
+	int[] args;
+	int num;
 	int add(int a, int b){
 		return (a+b);
 	}
@@ -42,8 +44,10 @@ class CustomMath{
 		System.out.println("How many Numbers will you enter");
 		Scanner s = new Scanner(System.in);
 		double sum=0;
-		int num =  s.nextInt();
-		int[] args = new int[num]; 
+		num =  s.nextInt();
+
+		System.out.println("Enter the numbers:");
+		args = new int[num]; 
 		//inserting
 		for(int i=0; i<num;i++){
 			args[i] = s.nextInt();
@@ -54,6 +58,19 @@ class CustomMath{
 			System.out.println("Mean of numbers is : "+sum);
 		
 		
-		return 0;
+		return sum;
+	}
+	double variance(){
+		System.out.println("Entering Variance Fuction" );
+		double avg = mean();
+		double variance = 0;
+
+		for(int i=0; i<num;i++){
+			variance = variance  + Math.pow(args[i]-avg,2);
+		}
+
+		variance = variance / (num);
+		System.out.println("Variance of numbers is : "+variance );
+		return variance;	
 	}
 }

@@ -12,7 +12,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
@@ -40,7 +39,7 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void handleButtonAction(ActionEvent e) {
-       
+        System.out.println("Just hit something");
         if(btadd== e.getSource()){
             n1 = Integer.parseInt(num1.getText());
             n2 = Integer.parseInt(num2.getText());

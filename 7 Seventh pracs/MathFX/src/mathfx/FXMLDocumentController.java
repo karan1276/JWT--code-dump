@@ -13,13 +13,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import java.lang.*;
 
 /**
  *
  * @author student
  */
 public class FXMLDocumentController implements Initializable {
-    int n1,n2;
+    
     @FXML
     private Button btadd;
     @FXML
@@ -31,20 +32,45 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button btchng;
     @FXML
-    private Button btcalc;
+    private TextField ans;
     @FXML
     private TextField num1;
     @FXML
     private TextField num2;
     
     @FXML
-    private void handleButtonAction(ActionEvent e) {
-        System.out.println("Just hit something");
-        if(btadd== e.getSource()){
-            n1 = Integer.parseInt(num1.getText());
-            n2 = Integer.parseInt(num2.getText());
-            System.out.println("Addintion is :"+(n1+n2));
+    private void handelClick(ActionEvent e) {
+        int n1 = Integer.parseInt(num1.getText());
+        int n2 = Integer.parseInt(num2.getText());
+
+        if(e.getSource() == btadd){
+            handelAdd(e,n1,n2);
         }
+        else if(e.getSource() == btsub){
+            handelSub(e,n1,n2);
+        }
+        else if(e.getSource() == btmult){
+            handelMult(e,n1,n2);
+        }
+        else if(e.getSource() == btdiv){
+            handelDiv(e,n1,n2);
+        }
+    }
+    @FXML
+    private void handelAdd(ActionEvent e, int n1, int n2){
+        ans.setText(Integer.toString(n1+n2));
+    }
+    @FXML
+    private void handelSub(ActionEvent e, int n1, int n2){
+        ans.setText(Integer.toString(n1-n2));
+    }
+    @FXML
+    private void handelMult(ActionEvent e, int n1, int n2){
+        ans.setText(Integer.toString(n1*n2));
+    }
+    @FXML
+    private void handelDiv(ActionEvent e, int n1, int n2){
+        ans.setText(Integer.toString(n1/n2));
     }
     
     @Override

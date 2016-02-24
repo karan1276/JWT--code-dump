@@ -50,7 +50,7 @@ public class StudentFX extends Application {
         GridPane grid = new GridPane();
         Scene s = new Scene(grid, 400, 400);
         final List<StudentNode> al = new ArrayList();
-        
+        int count = 2;//row count
         
         //Setting fake data
         for (int i = 0; i < 5; i++) {
@@ -124,6 +124,7 @@ public class StudentFX extends Application {
                 stu.setName(inname.getText());
                 stu.setCity(incity.getText());
                 al.add(stu);
+
                 
                 for(int i = 0; i<al.size(); i++){
                         System.out.println(" "+al.get(i).getPrn()+" ");
@@ -137,6 +138,13 @@ public class StudentFX extends Application {
         primaryStage.show();
     }
 
+    /**
+     * This function adds components to the scene
+     * @param grid
+     */
+    public static void constructGrid(GridPane grid){
+        
+    }
     /**
      * The main() method is ignored in correctly deployed JavaFX application.
      * main() serves only as fallback in case the application can not be

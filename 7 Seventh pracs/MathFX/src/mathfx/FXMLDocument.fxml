@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="186.0" prefWidth="288.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="186.0" prefWidth="288.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mathfx.FXMLDocumentController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="144.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="144.0" />
@@ -19,42 +19,42 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button fx:id="btadd" alignment="CENTER" mnemonicParsing="false" prefWidth="500.0" text="+" GridPane.rowIndex="1">
+      <Button fx:id="btadd" alignment="CENTER" mnemonicParsing="false" onAction="#handelClick" prefWidth="500.0" text="+" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="btmult" mnemonicParsing="false" prefWidth="500.0" text="*" GridPane.rowIndex="2">
+      <Button fx:id="btmult" mnemonicParsing="false" onAction="#handelClick" prefWidth="500.0" text="*" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="btchng" mnemonicParsing="false" prefWidth="500.0" text="Change Mode" GridPane.rowIndex="3">
+      <Button fx:id="btchng" mnemonicParsing="false" onAction="#handelClick" prefWidth="500.0" text="Change Mode" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="btsub" mnemonicParsing="false" prefWidth="500.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <Button fx:id="btsub" mnemonicParsing="false" onAction="#handelClick" prefWidth="500.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="btdiv" mnemonicParsing="false" prefWidth="500.0" text="/" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <Button fx:id="btdiv" mnemonicParsing="false" onAction="#handelClick" prefWidth="500.0" text="/" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="btcalc" mnemonicParsing="false" prefWidth="500.0" text="Submit answer" GridPane.columnIndex="1" GridPane.rowIndex="3">
-         <GridPane.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </GridPane.margin>
-      </Button>
-      <TextField>
+      <TextField fx:id="num1">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </TextField>
-      <TextField GridPane.columnIndex="1">
+      <TextField fx:id="num2" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="ans" text="Answer" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
